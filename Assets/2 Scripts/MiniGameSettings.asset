@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f454d0039ff73a24886d790ad0cb31c3, type: 3}
+  m_Name: MiniGameSettings
+  m_EditorClassIdentifier: Assembly-CSharp::MiniGameSettings
+  pfandGameDescription: Deposit the Pfand bottle at the right moment!
+  shipGameDescription: Transport the Pfand containers safely to their next destination!
+  trashGameDescription: Bring the containers to their last resting place!
+  pfandGameDifficultySettings:
+  - markerSpeed: 2
+    bottleAmount: 2
+    levelDuration: 25
+  - markerSpeed: 3
+    bottleAmount: 5
+    levelDuration: 25
+  - markerSpeed: 4
+    bottleAmount: 7
+    levelDuration: 25
+  - markerSpeed: 4
+    bottleAmount: 10
+    levelDuration: 25
+  shipGameDifficultySettings:
+  - containers: 7
+    trashRows: 2
+    levelDuration: 1000
+    trashPerRow: {x: 1, y: 3}
+  - containers: 5
+    trashRows: 4
+    levelDuration: 1000
+    trashPerRow: {x: 2, y: 3}
+  - containers: 3
+    trashRows: 6
+    levelDuration: 1000
+    trashPerRow: {x: 2, y: 4}
+  - containers: 3
+    trashRows: 20
+    levelDuration: 1000
+    trashPerRow: {x: 4, y: 6}
+  trashGameDifficultySettings:
+  - markerSpeed: 2
+    bottleAmount: 2
+    levelDuration: 25
+  - markerSpeed: 3
+    bottleAmount: 5
+    levelDuration: 25
+  - markerSpeed: 4
+    bottleAmount: 7
+    levelDuration: 25
+  - markerSpeed: 4
+    bottleAmount: 10
+    levelDuration: 25
