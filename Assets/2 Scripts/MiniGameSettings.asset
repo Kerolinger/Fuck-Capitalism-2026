@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f454d0039ff73a24886d790ad0cb31c3, type: 3}
   m_Name: MiniGameSettings
   m_EditorClassIdentifier: Assembly-CSharp::MiniGameSettings
-  pfandGameDescription: Deposit the Pfand bottle at the right moment!
-  shipGameDescription: Transport the Pfand containers safely to their next destination!
-  trashGameDescription: Bring the containers to their last resting place!
+  pfandGameDescription: Press space on green to deposit pfand bottles!
+  shipGameDescription: Press space to change boat speed to travel to the port safely!
+  trashGameDescription: Press space on green to drop containers into one pile!
   pfandGameDifficultySettings:
   - markerSpeed: 2
     bottleAmount: 2
@@ -51,10 +51,10 @@ MonoBehaviour:
     levelDuration: 25
   - markerSpeed: 3
     bottleAmount: 5
-    levelDuration: 25
+    levelDuration: 35
   - markerSpeed: 4
     bottleAmount: 7
-    levelDuration: 25
+    levelDuration: 45
   - markerSpeed: 4
     bottleAmount: 10
     levelDuration: 25

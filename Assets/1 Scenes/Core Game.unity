@@ -720,6 +720,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: (C) TXT_Description
       objectReference: {fileID: 0}
+    - target: {fileID: 3707257355301524939, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 370.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707257355301524939, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 63.9452
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707257355301524939, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.9417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707257355301524939, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 72.3274
+      objectReference: {fileID: 0}
     - target: {fileID: 3929871871549190477, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
       propertyPath: m_Name
       value: (C) Marker
@@ -763,6 +779,28 @@ PrefabInstance:
     - target: {fileID: 7400077458156383557, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
       propertyPath: m_Name
       value: _(C) EndingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400077458156383557, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419914355564615698, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_text
+      value: "Good Try! \n\nYou tried your best but the system is not built to be
+        won. Recycling is not as perfect as companies paint it to be. It is complex
+        and messy.\n\nKeep doing your best and fun along the way."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419914355564615698, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419914355564615698, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419914355564615698, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7578108557440753294, guid: cb86bd897a297134b96151d157f75e0d, type: 3}
       propertyPath: m_Name
