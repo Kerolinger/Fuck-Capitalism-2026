@@ -30874,6 +30874,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 253697309401831426, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 253697309401831426, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: 'm_Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7400000, guid: 8c1d6e2e68149fb44a75a6133a794007, type: 2}
+    - target: {fileID: 1681291517528722172, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 3a78328602c369e42b73ac2e9d3b31b1, type: 2}
+    - target: {fileID: 1681291517528722172, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: 'm_Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7400000, guid: 3a78328602c369e42b73ac2e9d3b31b1, type: 2}
     - target: {fileID: 2247504526679072609, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.3612
@@ -30932,7 +30948,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4709366208429930867, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894869446426556344, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -78.012825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894869446426556344, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 91.044846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894869446426556344, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -102.06348
       objectReference: {fileID: 0}
     - target: {fileID: 5416129296438452668, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
       propertyPath: m_ClearFlags
