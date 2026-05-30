@@ -781,13 +781,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658533379}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4378526, y: -0.5239079, z: -0.2729711, w: 0.67771125}
+  m_LocalRotation: {x: 0.7527588, y: 0.26788095, z: -0.08546972, w: 0.5952218}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 17.906, y: -85.926, z: -60.571}
+  m_LocalEulerAnglesHint: {x: 70.375, y: 145.504, z: 116.126}
 --- !u!114 &658533382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,23 +1620,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 07bfc438432435147b03367cebf7494f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.22219
+      value: 0.27324924
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 07bfc438432435147b03367cebf7494f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.22219
+      value: 0.27324924
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 07bfc438432435147b03367cebf7494f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.22219
+      value: 0.27324924
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 07bfc438432435147b03367cebf7494f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.89
+      value: -18.958
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 07bfc438432435147b03367cebf7494f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -60.54
+      value: -60.731
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 07bfc438432435147b03367cebf7494f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2116,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4709366208429930867, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5416129296438452668, guid: 8662c1fce4287d84ca7b5100c2efcad3, type: 3}
       propertyPath: m_ClearFlags
