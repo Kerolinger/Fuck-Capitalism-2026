@@ -17,8 +17,8 @@ MonoBehaviour:
   trashGameDescription: Press space on green to drop containers into one pile!
   pfandGameDifficultySettings:
   - markerSpeed: 2
-    bottleAmount: 100
-    levelDuration: 500
+    bottleAmount: 2
+    levelDuration: 20
   - markerSpeed: 3
     bottleAmount: 5
     levelDuration: 25
