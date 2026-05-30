@@ -24,15 +24,15 @@ MonoBehaviour:
     levelDuration: 25
   - markerSpeed: 4
     bottleAmount: 7
-    levelDuration: 20
+    levelDuration: 25
   - markerSpeed: 4.5
     bottleAmount: 10
-    levelDuration: 20
+    levelDuration: 25
   - markerSpeed: 4.5
     bottleAmount: 15
-    levelDuration: 20
+    levelDuration: 25
   shipGameDifficultySettings:
-  - containers: 10
+  - containers: 7
     trashRows: 3
     levelDuration: 1000
     trashPerRow: {x: 1, y: 3}
