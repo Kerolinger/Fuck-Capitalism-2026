@@ -9571,6 +9571,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938506605}
   m_Mesh: {fileID: -5685363115531012651, guid: 472e3134c9bd3354993e513024dda7a5, type: 3}
+--- !u!108 &938722890 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 2118488022863997515, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+  m_PrefabInstance: {fileID: 2908388943371967452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941905238
 GameObject:
   m_ObjectHideFlags: 0
@@ -29979,6 +29984,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3f919766567eee4428aa27ed2179069f, type: 2}
+    - target: {fileID: 2118488022863997515, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118488022863997515, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118488022863997515, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227371134663032614, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: dirLight
+      value: 
+      objectReference: {fileID: 938722890}
     - target: {fileID: 2227371134663032614, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
       propertyPath: shipSound
       value: 
@@ -30100,6 +30121,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8544433163390422624, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860012362344506976, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
