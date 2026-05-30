@@ -127,7 +127,8 @@ public class TrashGrid : MonoBehaviour
                 currentShipSpeed = boatIdleSpeed;
                 Debug.Log("new ship idlee  boat gast");
                 waterAnim["water"].speed = 0.3f;
-             
+                shipSound.pitch = 0.3f;
+
             }
             else
             {
