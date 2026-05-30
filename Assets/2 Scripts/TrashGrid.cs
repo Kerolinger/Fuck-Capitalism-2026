@@ -11,6 +11,9 @@ public class TrashGrid : MonoBehaviour
     [SerializeField] private GameObject trashRowPrefab;
     [SerializeField] private GameObject haven;
     [SerializeField] private Animation waterAnim;
+    [SerializeField] private ParticleSystem rippleSystem;
+    [SerializeField] private Light dirLight;
+
 
     [Header("Modifiable")]
     [SerializeField] private int trashRowAmount;
@@ -108,45 +111,62 @@ public class TrashGrid : MonoBehaviour
 
         else if (newShipSpeed == 1)
         {
-            Debug.Log("new ship speed boat idle");
+          //  Debug.Log("new ship speed boat idle");
             currentShipSpeed = boatIdleSpeed;
-            waterAnim["water"].speed = 0.3f;
+            waterAnim["water"].speed = 0.6f;
+            rippleSystem.startSpeed = 5;
+            dirLight.color = new Color(1f, 1f, 1f);
             shipSound.pitch = 0.3f;
         }
         else if (newShipSpeed == 2)
         {
-            Debug.Log("new ship speed boat gast");
+         //   Debug.Log("new ship speed boat gast");
             currentShipSpeed = boatFastSpeed;
             waterAnim["water"].speed = 1.5f;
             shipSound.pitch = 0.6f;
+            rippleSystem.startSpeed = 20;
+
+            dirLight.color = ColorUtility.TryParseHtmlString("#FF84AE", out var c) ? c : Color.white;
+
         }
         else if (newShipSpeed == 100)
         {
             if (currentShipSpeed == boatFastSpeed)
             {
                 currentShipSpeed = boatIdleSpeed;
-                Debug.Log("new ship idlee  boat gast");
-                waterAnim["water"].speed = 0.3f;
+             //   Debug.Log("new ship idlee  boat gast");
+                waterAnim["water"].speed = 0.6f;
+                dirLight.color = new Color(1f, 1f, 1f);
+                rippleSystem.startSpeed = 5;
                 shipSound.pitch = 0.3f;
 
             }
             else
             {
                 currentShipSpeed = boatFastSpeed;
-                Debug.Log("new ship speeds boat gast");
+              //  Debug.Log("new ship speeds boat gast");
                 waterAnim["water"].speed = 1.5f;
+                rippleSystem.startSpeed = 20;
                 shipSound.pitch = 0.6f;
+
+                dirLight.color = ColorUtility.TryParseHtmlString("#FF84AE", out var c) ? c : Color.white;
             }
         }
         else if (newShipSpeed == 99)
         {
             currentShipSpeed = 0;
             waterAnim["water"].speed = 0f;
+            dirLight.color = new Color(1f, 1f, 1f);
+            rippleSystem.Stop();
+
         }
     }
 
     private IEnumerator ShipSpeedCooldown()
     {
+        dirLight.color = new Color(1f, 1f, 1f);
+
+        rippleSystem.Stop();
         waterAnim["water"].speed = -0.3f;
         currentShipSpeed = boatSetBack;
         isShipHurt = true;
@@ -154,6 +174,8 @@ public class TrashGrid : MonoBehaviour
         isShipHurt = false;
         currentShipSpeed = boatIdleSpeed;
         waterAnim["water"].speed = 0.6f;
+        rippleSystem.Play();
+
 
     }
 

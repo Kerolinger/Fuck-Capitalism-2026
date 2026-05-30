@@ -52,6 +52,7 @@ public class ShipBehavior : MonoBehaviour
                 containers[i].transform.parent = trashGrid.Haven.transform;
                 containers[i].transform.position = new Vector3(-215f, -51.5f, 130f);
                 containers[i].transform.eulerAngles = new Vector3(-0, -20, 5f);
+                containers[i].transform.GetChild(0).gameObject.SetActive(true);
             }
         }
     }

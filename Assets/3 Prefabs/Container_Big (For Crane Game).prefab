@@ -16,9 +16,13 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2223523828459213003, guid: ca84cb42132332d4cbc4c448cee77da3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ec6adfe3ca43be9449fff15b9798df01, type: 2}
     - target: {fileID: 2416878501472106303, guid: ca84cb42132332d4cbc4c448cee77da3, type: 3}
       propertyPath: m_Name
-      value: Container_Big Variant
+      value: Container_Big (For Crane Game)
       objectReference: {fileID: 0}
     - target: {fileID: 7994506184432642236, guid: ca84cb42132332d4cbc4c448cee77da3, type: 3}
       propertyPath: m_LocalScale.x
