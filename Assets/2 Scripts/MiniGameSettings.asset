@@ -17,44 +17,54 @@ MonoBehaviour:
   trashGameDescription: Press space on green to drop containers into one pile!
   pfandGameDifficultySettings:
   - markerSpeed: 2
-    bottleAmount: 2
-    levelDuration: 20
+    bottleAmount: 3
+    levelDuration: 25
   - markerSpeed: 3
     bottleAmount: 5
     levelDuration: 25
   - markerSpeed: 4
     bottleAmount: 7
-    levelDuration: 25
-  - markerSpeed: 4
+    levelDuration: 20
+  - markerSpeed: 4.5
     bottleAmount: 10
-    levelDuration: 25
+    levelDuration: 20
+  - markerSpeed: 4.5
+    bottleAmount: 15
+    levelDuration: 20
   shipGameDifficultySettings:
-  - containers: 7
-    trashRows: 2
+  - containers: 10
+    trashRows: 3
     levelDuration: 1000
     trashPerRow: {x: 1, y: 3}
-  - containers: 5
-    trashRows: 4
+  - containers: 7
+    trashRows: 5
     levelDuration: 1000
     trashPerRow: {x: 2, y: 3}
-  - containers: 3
-    trashRows: 6
+  - containers: 5
+    trashRows: 5
     levelDuration: 1000
-    trashPerRow: {x: 2, y: 4}
-  - containers: 3
-    trashRows: 20
+    trashPerRow: {x: 3, y: 4}
+  - containers: 5
+    trashRows: 7
     levelDuration: 1000
-    trashPerRow: {x: 4, y: 6}
+    trashPerRow: {x: 3, y: 4}
+  - containers: 3
+    trashRows: 7
+    levelDuration: 1000
+    trashPerRow: {x: 4, y: 5}
   trashGameDifficultySettings:
   - markerSpeed: 2
-    bottleAmount: 2
+    bottleAmount: 3
     levelDuration: 25
   - markerSpeed: 3
     bottleAmount: 5
-    levelDuration: 35
+    levelDuration: 25
   - markerSpeed: 4
     bottleAmount: 7
-    levelDuration: 45
-  - markerSpeed: 4
+    levelDuration: 50
+  - markerSpeed: 4.5
     bottleAmount: 10
-    levelDuration: 25
+    levelDuration: 50
+  - markerSpeed: 4.5
+    bottleAmount: 15
+    levelDuration: 50
