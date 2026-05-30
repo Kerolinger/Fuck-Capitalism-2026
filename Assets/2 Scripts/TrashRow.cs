@@ -8,11 +8,11 @@ public class TrashRow : MonoBehaviour
     [SerializeField] private Transform spawnPosition01;
     [SerializeField] private Transform spawnPosition02;
 
-    [Header ("Modifiable")]
+    [Header("Modifiable")]
     [SerializeField] private GameObject[] trashPrefabs;
     [SerializeField] private float trashSpeed;
     [SerializeField] private float diveDistance;
-    [SerializeField] [Range(0,5)] private int trashAmount;
+    [SerializeField] [Range(0, 5)] private int trashAmount;
 
     private List<GameObject> spawnedTrash;
 
@@ -25,7 +25,7 @@ public class TrashRow : MonoBehaviour
 
     public void SpawnRow()
     {
-        spawnedTrash = new List<GameObject> ();
+        spawnedTrash = new List<GameObject>();
 
         //random direction of speed
         trashSpeed *= Random.Range(0, 100) > 50 ? 1 : -1;
@@ -53,7 +53,13 @@ public class TrashRow : MonoBehaviour
             newTrash.transform.parent = transform;
             spawnedTrash.Add(newTrash);
 
-            spawnedTrash[i].transform.position = new Vector3(realSpawnPoint.position.x, realSpawnPoint.position.y, realSpawnPoint.position.z + Random.Range(40f,100f) * i);
+            spawnedTrash[i].transform.position = new Vector3(realSpawnPoint.position.x, realSpawnPoint.position.y, realSpawnPoint.position.z + Random.Range(40f, 100f) * i);
+            spawnedTrash[i].transform.GetChild(0).localRotation =
+                Quaternion.Euler(
+                    Random.Range(0f, 20f),
+                    Random.Range(0f, 360f),
+                    Random.Range(0f, 20f)
+                );
         }
 
         initialized = true;
@@ -66,7 +72,7 @@ public class TrashRow : MonoBehaviour
         if (!initialized)
             return;
 
-        foreach(GameObject trash in spawnedTrash)
+        foreach (GameObject trash in spawnedTrash)
         {
             trash.transform.position = new Vector3(trash.transform.position.x, trash.transform.position.y, trash.transform.position.z + trashSpeed * Time.deltaTime);
 
