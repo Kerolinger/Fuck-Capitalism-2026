@@ -7,7 +7,7 @@ using static UnityEngine.Rendering.SplashScreen;
 
 public class GameManager : MonoBehaviour
 {
-    [Header ("Stats")]
+    [Header("Stats")]
     [SerializeField] private GameState currentGameState;
     [SerializeField] private MiniGameSettings gameSettings;
 
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject shipIcon;
     [SerializeField] private TrashGrid trashGrid;
     [SerializeField] private ShipBehavior shipBehavior;
+    [SerializeField] private Animation waterAnim;
 
     [Header("References - Trash Game")]
     [SerializeField] private GameObject trashEnvironment;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
     private int remainingBottleAmount;
     private int remainingContainerAmount;
 
-    private enum GameState { Pfand, Ship, Trash}
+    private enum GameState { Pfand, Ship, Trash }
 
     private bool isGameOver = false;
 
@@ -70,8 +71,8 @@ public class GameManager : MonoBehaviour
         switch (currentGameState)
         {
             case GameState.Pfand:
-                
-                if(gameSettings.PfandGameDifficultySettings.Length -1 > difficultyPfand)
+
+                if (gameSettings.PfandGameDifficultySettings.Length - 1 > difficultyPfand)
                     difficultyPfand++;
 
                 // Initialize Difficulty Settings
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.Ship:
 
-                if (gameSettings.ShipGameDifficultySettings.Length -1 > difficultyShip)
+                if (gameSettings.ShipGameDifficultySettings.Length - 1 > difficultyShip)
                     difficultyShip++;
 
                 // Initialize Difficulty Settings
@@ -139,13 +140,15 @@ public class GameManager : MonoBehaviour
 
     public void OnInteract(InputValue value)
     {
-        switch(currentGameState)
+        switch (currentGameState)
         {
             case GameState.Pfand:
                 EvaluateResult(marker.HitMarker());
                 break;
             case GameState.Ship:
                 trashGrid.SetShipSpeed(100);
+          
+
                 break;
             case GameState.Trash:
                 EvaluateResult(marker.HitMarker());
@@ -171,7 +174,7 @@ public class GameManager : MonoBehaviour
                 pfandArm.Stop();
                 pfandArm.Play();
                 remainingBottleAmount--;
-                
+
                 break;
             case 2:
                 successIcon.SetActive(true);
@@ -186,7 +189,7 @@ public class GameManager : MonoBehaviour
         bottleAmountText.text = remainingBottleAmount.ToString();
 
         //if all bottles have been put in, end game earlier
-        if(remainingBottleAmount == 0)
+        if (remainingBottleAmount == 0)
             currentTimer = 0;
     }
 

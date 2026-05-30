@@ -7,6 +7,7 @@ public class TrashGrid : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject trashRowPrefab;
     [SerializeField] private GameObject haven;
+    [SerializeField] private Animation waterAnim;
 
     [Header("Modifiable")]
     [SerializeField] private int trashRowAmount;
@@ -47,7 +48,7 @@ public class TrashGrid : MonoBehaviour
         for (int i = 0; i < trashRowAmount; i++)
         {
             var newTrash = Instantiate(trashRowPrefab);
-            newTrash.GetComponent<TrashRow>().TrashAmount = (int) Random.RandomRange(TrashPerRow.x, TrashPerRow.y);
+            newTrash.GetComponent<TrashRow>().TrashAmount = (int)Random.RandomRange(TrashPerRow.x, TrashPerRow.y);
             newTrash.GetComponent<TrashRow>().SpawnRow();
             newTrash.transform.parent = transform;
             trashRows.Add(newTrash);
@@ -55,7 +56,7 @@ public class TrashGrid : MonoBehaviour
             trashRows[i].transform.position = new Vector3(transform.position.x + trashRowSpacing * i, transform.position.y, transform.position.z);
         }
 
-        haven.transform.position = new Vector3(trashRows[trashRowAmount -1].transform.position.x + havenSpacing, haven.transform.position.y, haven.transform.position.z);
+        haven.transform.position = new Vector3(trashRows[trashRowAmount - 1].transform.position.x + havenSpacing, haven.transform.position.y, haven.transform.position.z);
         initialized = true;
     }
 
@@ -84,7 +85,7 @@ public class TrashGrid : MonoBehaviour
         {
             trashRow.transform.position = new Vector3(trashRow.transform.position.x - currentShipSpeed * Time.deltaTime, trashRow.transform.position.y, trashRow.transform.position.z);
 
-            if(trashRow.transform.position.x  < -600)
+            if (trashRow.transform.position.x < -600)
                 trashRow.SetActive(false);
         }
 
@@ -100,27 +101,49 @@ public class TrashGrid : MonoBehaviour
             StartCoroutine(ShipSpeedCooldown());
 
         else if (newShipSpeed == 1)
+        {
+            Debug.Log("new ship speed boat idle");
             currentShipSpeed = boatIdleSpeed;
+            waterAnim["water"].speed = 0.3f;
+        }
         else if (newShipSpeed == 2)
+        {
+            Debug.Log("new ship speed boat gast");
             currentShipSpeed = boatFastSpeed;
+            waterAnim["water"].speed = 1.5f;
+        }
         else if (newShipSpeed == 100)
         {
             if (currentShipSpeed == boatFastSpeed)
+            {
                 currentShipSpeed = boatIdleSpeed;
+                Debug.Log("new ship idlee  boat gast");
+                waterAnim["water"].speed = 0.6f;
+            }
             else
+            {
                 currentShipSpeed = boatFastSpeed;
+                Debug.Log("new ship speeds boat gast");
+                waterAnim["water"].speed = 1.5f;
+            }
         }
         else if (newShipSpeed == 99)
+        {
             currentShipSpeed = 0;
+            waterAnim["water"].speed = 0f;
+        }
     }
 
     private IEnumerator ShipSpeedCooldown()
     {
+        waterAnim["water"].speed = -0.3f;
         currentShipSpeed = boatSetBack;
         isShipHurt = true;
         yield return new WaitForSeconds(boatInvincibilityTime);
         isShipHurt = false;
         currentShipSpeed = boatIdleSpeed;
+        waterAnim["water"].speed = 0.6f;
+
     }
 
 }
