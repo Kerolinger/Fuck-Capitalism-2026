@@ -210,13 +210,13 @@ public class GameManager : MonoBehaviour
 
         while (currentTimer != 0)
         {
-            if (currentTimer == 8)
+            if (currentTimer != 1)
             {
                 countdownSound.Play();
             }
             else if (currentTimer == 1)
             {
-                bellSound.Play();
+               bellSound.Play();
             }
 
             currentTimer -= 1;

@@ -906,8 +906,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ab6768ded338cd94f8865597b92db69b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.495
-  m_Pitch: 1.13
+  m_Volume: 0.15
+  m_Pitch: 1.3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1867,10 +1867,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 83d20144b73c1cc4683df9aa451792c5, type: 3}
+  m_Resource: {fileID: 8300000, guid: ef3f41db996476b409d0995319f907ce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
-  m_Pitch: 0.9
+  m_Volume: 0.05
+  m_Pitch: 0.6
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -4242,8 +4242,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 080f4866cc244034cb8d3a6c5a080dad, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.3
+  m_Pitch: 0.6
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5866,8 +5866,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 08851d2dbe5b50941972deb92c745a1d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.282
-  m_Pitch: 1.26
+  m_Volume: 0.075
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -6461,6 +6461,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 3f919766567eee4428aa27ed2179069f, type: 2}
     - target: {fileID: 2227371134663032614, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: shipSound
+      value: 
+      objectReference: {fileID: 150820792}
+    - target: {fileID: 2227371134663032614, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
       propertyPath: waterAnim
       value: 
       objectReference: {fileID: 7262318}
@@ -6540,6 +6544,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1398268429}
+    - target: {fileID: 6660735990872119287, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: failureSound
+      value: 
+      objectReference: {fileID: 2014849804}
+    - target: {fileID: 6660735990872119287, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 414261429}
     - target: {fileID: 7167789953176941001, guid: 250233cd31f1bf74da2d0b8cff6a9b35, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

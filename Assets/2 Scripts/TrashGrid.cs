@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TrashGrid : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource shipSound;
+
     [Header("References")]
     [SerializeField] private GameObject trashRowPrefab;
     [SerializeField] private GameObject haven;
@@ -44,6 +47,7 @@ public class TrashGrid : MonoBehaviour
 
         initialized = false;
         SetShipSpeed(1);
+        shipSound.Play();
 
         for (int i = 0; i < trashRowAmount; i++)
         {
@@ -74,6 +78,8 @@ public class TrashGrid : MonoBehaviour
         }
 
         trashRows.Clear();
+
+        shipSound.Stop();
     }
 
     void Update()
@@ -105,12 +111,14 @@ public class TrashGrid : MonoBehaviour
             Debug.Log("new ship speed boat idle");
             currentShipSpeed = boatIdleSpeed;
             waterAnim["water"].speed = 0.3f;
+            shipSound.pitch = 0.3f;
         }
         else if (newShipSpeed == 2)
         {
             Debug.Log("new ship speed boat gast");
             currentShipSpeed = boatFastSpeed;
             waterAnim["water"].speed = 1.5f;
+            shipSound.pitch = 0.6f;
         }
         else if (newShipSpeed == 100)
         {
@@ -118,13 +126,15 @@ public class TrashGrid : MonoBehaviour
             {
                 currentShipSpeed = boatIdleSpeed;
                 Debug.Log("new ship idlee  boat gast");
-                waterAnim["water"].speed = 0.6f;
+                waterAnim["water"].speed = 0.3f;
+             
             }
             else
             {
                 currentShipSpeed = boatFastSpeed;
                 Debug.Log("new ship speeds boat gast");
                 waterAnim["water"].speed = 1.5f;
+                shipSound.pitch = 0.6f;
             }
         }
         else if (newShipSpeed == 99)
