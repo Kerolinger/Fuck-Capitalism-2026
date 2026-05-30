@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 
     [Header("References - Pfand Game")]
     [SerializeField] private GameObject pfandEnvironment;
+    [SerializeField] private Animation pfandBottleCorrect;
+    [SerializeField] private Animation pfandBottleWrong;
+    [SerializeField] private Animation pfandArm;
+
 
     [SerializeField] private MarkerMovement marker;
     [SerializeField] private GameObject successIcon;
@@ -155,13 +159,26 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 failureIcon.SetActive(true);
+                pfandArm.Stop();
+                pfandArm.Play();
+                pfandBottleWrong.Stop();
+                pfandBottleWrong.Play();
                 break;
             case 1:
                 successIcon.SetActive(true);
+                pfandBottleCorrect.Stop();
+                pfandBottleCorrect.Play();
+                pfandArm.Stop();
+                pfandArm.Play();
                 remainingBottleAmount--;
+                
                 break;
             case 2:
                 successIcon.SetActive(true);
+                pfandBottleCorrect.Stop();
+                pfandBottleCorrect.Play();
+                pfandArm.Stop();
+                pfandArm.Play();
                 remainingBottleAmount--;
                 break;
         }

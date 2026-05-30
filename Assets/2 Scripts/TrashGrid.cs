@@ -63,11 +63,16 @@ public class TrashGrid : MonoBehaviour
     {
         initialized = false;
 
+        if (trashRows == null)
+            return;
+
         foreach (GameObject trashRow in trashRows)
         {
-            trashRows.Remove(trashRow);
-            Destroy(trashRow);
+            if (trashRow != null)
+                Destroy(trashRow);
         }
+
+        trashRows.Clear();
     }
 
     void Update()
