@@ -7,6 +7,13 @@ using static UnityEngine.Rendering.SplashScreen;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource successSound;
+    [SerializeField] private AudioSource failureSound;
+    [SerializeField] private AudioSource transitionSound;
+    [SerializeField] private AudioSource countdownSound;
+    [SerializeField] private AudioSource bellSound;
+
     [Header("Stats")]
     [SerializeField] private GameState currentGameState;
     [SerializeField] private MiniGameSettings gameSettings;
@@ -162,6 +169,7 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 failureIcon.SetActive(true);
+                failureSound.Play();
                 pfandArm.Stop();
                 pfandArm.Play();
                 pfandBottleWrong.Stop();
@@ -169,6 +177,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
                 successIcon.SetActive(true);
+                successSound.Play();
                 pfandBottleCorrect.Stop();
                 pfandBottleCorrect.Play();
                 pfandArm.Stop();
@@ -178,6 +187,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 successIcon.SetActive(true);
+                successSound.Play();
                 pfandBottleCorrect.Stop();
                 pfandBottleCorrect.Play();
                 pfandArm.Stop();
@@ -200,10 +210,23 @@ public class GameManager : MonoBehaviour
 
         while (currentTimer != 0)
         {
+            if (currentTimer == 8)
+            {
+                countdownSound.Play();
+            }
+            else if (currentTimer == 1)
+            {
+                bellSound.Play();
+            }
+
             currentTimer -= 1;
             timer.text = currentTimer.ToString();
             yield return new WaitForSeconds(1f);
+
+            
         }
+
+        
 
         if (remainingBottleAmount > 0)
             isGameOver = true;
@@ -214,6 +237,7 @@ public class GameManager : MonoBehaviour
     public void StartLevelTransition()
     {
         transitionscreen.SetActive(true);
+        transitionSound.Play();
     }
     public void QueueNextGameState()
     {
