@@ -107,6 +107,8 @@ public class GameManager : MonoBehaviour
                 bottleAmountText.text = remainingBottleAmount.ToString();
                 gameDescription.text = gameSettings.PfandGameDescription;
 
+                bottleAmountText.rectTransform.anchoredPosition = new Vector2(163f, -111f);
+
                 pfandEnvironment.SetActive(true);
                 marker.gameObject.SetActive(true);
                 balanceMetre.SetActive(true);
@@ -147,6 +149,12 @@ public class GameManager : MonoBehaviour
                 marker.SetSpeed(gameSettings.TrashGameDifficultySettings[difficultyTrash].MarkerSpeed);
                 remainingBottleAmount = gameSettings.TrashGameDifficultySettings[difficultyTrash].BottleAmount;
                 bottleAmountText.text = remainingBottleAmount.ToString();
+
+                bottleAmountText.rectTransform.anchoredPosition = new Vector2(38.4f, -166.8f);
+
+
+
+
 
                 marker.IsCraneGame = true;
                 trashEnvironment.SetActive(true);
@@ -189,7 +197,11 @@ public class GameManager : MonoBehaviour
         switch (result)
         {
             case 0:
+
+                failureIcon.SetActive(false);
                 failureIcon.SetActive(true);
+               
+
                 failureSound.Play();
                 pfandArm.Stop();
                 pfandArm.Play();
@@ -197,7 +209,10 @@ public class GameManager : MonoBehaviour
                 pfandBottleWrong.Play();
                 break;
             case 1:
+                successIcon.SetActive(false);
                 successIcon.SetActive(true);
+                bottleAmountText.gameObject.GetComponent<Animation>().Stop();
+                bottleAmountText.gameObject.GetComponent<Animation>().Play();
                 pfandBottleCorrect.Stop();
                 pfandBottleCorrect.Play();
                 pfandArm.Stop();
@@ -220,6 +235,9 @@ public class GameManager : MonoBehaviour
 
                 break;
             case 2:
+                successIcon.SetActive(false);
+                bottleAmountText.gameObject.GetComponent<Animation>().Stop();
+                bottleAmountText.gameObject.GetComponent<Animation>().Play();
                 successIcon.SetActive(true);
                 pfandBottleCorrect.Stop();
                 pfandBottleCorrect.Play();
