@@ -12,6 +12,8 @@ public class CraneBehavior : MonoBehaviour
     [SerializeField] private Transform containerSpawnPosition;
     [SerializeField] private GameObject containerPrefab;
     [SerializeField] private Transform placedContainerParent;
+    [SerializeField] private GameObject clawOpen;
+    [SerializeField] private GameObject clawClose;
 
     [Header ("customizable")]
     [SerializeField] private float moveDownHeight;
@@ -28,6 +30,7 @@ public class CraneBehavior : MonoBehaviour
 
     private void Awake()
     {
+        clawOpen.SetActive(false);
         leftMostPosition = new Vector3(m_groundMarkers[0].transform.position.x, transform.position.y, transform.position.z);
         rightMostPostion = new Vector3(m_groundMarkers[m_groundMarkers.Length - 1].transform.position.x, transform.position.y, transform.position.z);
         initialHeight = transform.position.y;
@@ -93,6 +96,10 @@ public class CraneBehavior : MonoBehaviour
     {
         TweenLeft.Pause();
         TweenRight.Pause();
+        clawClose.SetActive(false);
+        clawOpen.SetActive(true);
+
+
 
         transform.DOMoveY(initialHeight - moveDownHeight, 0.2f).SetEase(Ease.OutSine).OnComplete(() =>
         {
@@ -100,7 +107,8 @@ public class CraneBehavior : MonoBehaviour
             currentContainer.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, -100);
             currentContainer.transform.parent = placedContainerParent.transform;
             currentContainer = null;
-
+            clawClose.SetActive(true);
+            clawOpen.SetActive(false);
             transform.DOMoveY(initialHeight + moveDownHeight, 0.1f).SetEase(Ease.InOutSine);
 
         });
