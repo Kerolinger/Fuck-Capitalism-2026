@@ -6,7 +6,9 @@ public class ShipBehavior : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private TrashGrid trashGrid;
 
+    [SerializeField] private GameObject containerPrefab;
     [SerializeField] private GameObject[] containers;
+    [SerializeField] private Vector3[] containerPositions;
 
     [Header("Audio")]
     [SerializeField] private AudioSource successSound;
@@ -28,13 +30,36 @@ public class ShipBehavior : MonoBehaviour
         }
     }
 
+
+    private void Start()
+    {
+        containerPositions = new Vector3[containers.Length];
+        Debug.Log(containerPositions.Length);
+
+        for (int i = 0; i < containerPositions.Length; i++)
+            containerPositions[i] = containers[i].transform.position;
+
+    }
+
     IEnumerator HavenArrival()
     {
+
         trashGrid.SetShipSpeed(99);
         successSound.Play();
         yield return new WaitForSeconds(0.75f);
+
+
         gameManager.StartLevelTransition();
 
+    }
+
+    public void OnEnable()
+    {
+        for (int i = 0; i < containerPositions.Length; i++)
+        {
+            containers[i].transform.parent = transform;
+            containers[i].transform.position = containerPositions[i];
+        }
     }
 
     public void UpdateContainers(int remainingContainers, bool lostFreshContainer = false)
