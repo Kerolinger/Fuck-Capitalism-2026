@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject transitionscreen;
     [SerializeField] private GameObject gameOverScreenSkill;
     [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private TextMeshProUGUI timerDecimal;
     [SerializeField] private TextMeshProUGUI gameDescription;
 
     [Header("References - Pfand Game")]
@@ -60,14 +61,22 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = false;
 
+    private Coroutine timerCoroutine;
+
     private void Start()
     {
         difficultyPfand = -1;
         difficultyShip = -1;
         difficultyTrash = -1;
 
+        pfandEnvironment.SetActive(false);
+        shipEnvironment.SetActive(false);
+        trashEnvironment.SetActive(false);
+
         InitializeNewGameState(currentGameState);
         timer.gameObject.SetActive(true);
+
+
     }
 
     private void InitializeNewGameState(GameState newGameState)
@@ -142,7 +151,13 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        StartCoroutine(StartTimer(newTimer));
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+        }
+
+        // Start the new one and store the reference
+        timerCoroutine = StartCoroutine(StartTimer(newTimer));
     }
 
     public void OnInteract(InputValue value)
@@ -154,7 +169,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Ship:
                 trashGrid.SetShipSpeed(100);
-          
+
 
                 break;
             case GameState.Trash:
@@ -206,27 +221,27 @@ public class GameManager : MonoBehaviour
     private IEnumerator StartTimer(int startValue)
     {
         currentTimer = startValue;
-        timer.text = startValue.ToString();
 
-        while (currentTimer != 0)
+        while (currentTimer > 0)
         {
             if (currentTimer != 1)
-            {
                 countdownSound.Play();
-            }
-            else if (currentTimer == 1)
-            {
-               bellSound.Play();
-            }
+            else
+                bellSound.Play();
 
-            currentTimer -= 1;
             timer.text = currentTimer.ToString();
-            yield return new WaitForSeconds(1f);
 
-            
+            for (int i = 9; i >= 0; i--)
+            {
+                timerDecimal.text = $".{i}";
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            currentTimer--;
         }
 
-        
+        timer.text = "0";
+        timerDecimal.text = ".0";
 
         if (remainingBottleAmount > 0)
             isGameOver = true;
