@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MiniGameSettings
   m_EditorClassIdentifier: Assembly-CSharp::MiniGameSettings
   pfandGameDescription: Press space on green to deposit pfand bottles!
-  shipGameDescription: Press space to change boat speed to travel to the port safely!
+  shipGameDescription: Press space to change boat speed to travel around the hurdles
+    safely!
   trashGameDescription: Press space on green to drop containers into one pile!
   pfandGameDifficultySettings:
   - markerSpeed: 2
@@ -31,15 +32,18 @@ MonoBehaviour:
   - markerSpeed: 4.5
     bottleAmount: 15
     levelDuration: 20
+  - markerSpeed: 4.5
+    bottleAmount: 20
+    levelDuration: 20
   shipGameDifficultySettings:
   - containers: 7
     trashRows: 3
     levelDuration: 1000
-    trashPerRow: {x: 1, y: 3}
+    trashPerRow: {x: 2, y: 3}
   - containers: 5
     trashRows: 5
     levelDuration: 1000
-    trashPerRow: {x: 2, y: 3}
+    trashPerRow: {x: 3, y: 3}
   - containers: 5
     trashRows: 5
     levelDuration: 1000
@@ -52,6 +56,10 @@ MonoBehaviour:
     trashRows: 7
     levelDuration: 1000
     trashPerRow: {x: 4, y: 5}
+  - containers: 3
+    trashRows: 7
+    levelDuration: 1000
+    trashPerRow: {x: 5, y: 6}
   trashGameDifficultySettings:
   - markerSpeed: 2
     bottleAmount: 3
@@ -67,4 +75,7 @@ MonoBehaviour:
     levelDuration: 20
   - markerSpeed: 4.5
     bottleAmount: 15
+    levelDuration: 20
+  - markerSpeed: 4.5
+    bottleAmount: 20
     levelDuration: 20
