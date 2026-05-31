@@ -9,11 +9,8 @@ public class AnimationEvent : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    public void RestartAnim()
-    {
-        gameObject.SetActive(false);
-        gameObject.SetActive(true);
-    }
+  
+
     public void QueueNextGame()
     {
         gameManager.QueueNextGameState();

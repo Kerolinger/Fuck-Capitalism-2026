@@ -106,6 +106,11 @@ public class CraneBehavior : MonoBehaviour
             currentContainer.GetComponent<Rigidbody>().isKinematic = false;
             currentContainer.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, -100);
             currentContainer.transform.parent = placedContainerParent.transform;
+            currentContainer.transform.GetChild(0).rotation = Quaternion.Euler(
+                Random.Range(0, 4) * 90f,
+                Random.Range(0, 4) * 90f,
+                Random.Range(0, 4) * 90f
+            );
             currentContainer = null;
             clawClose.SetActive(true);
             clawOpen.SetActive(false);
