@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
                 remainingBottleAmount = gameSettings.TrashGameDifficultySettings[difficultyTrash].BottleAmount;
                 bottleAmountText.text = remainingBottleAmount.ToString();
 
-                bottleAmountText.rectTransform.anchoredPosition = new Vector2(38.4f, -166.8f);
+                bottleAmountText.rectTransform.anchoredPosition = new Vector2(-39f, -166.8f);
 
 
 
