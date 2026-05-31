@@ -18,25 +18,25 @@ MonoBehaviour:
   pfandGameDifficultySettings:
   - markerSpeed: 2
     bottleAmount: 3
-    levelDuration: 25
-  - markerSpeed: 3
+    levelDuration: 20
+  - markerSpeed: 3.5
     bottleAmount: 5
-    levelDuration: 25
+    levelDuration: 20
   - markerSpeed: 4
     bottleAmount: 7
-    levelDuration: 25
+    levelDuration: 20
   - markerSpeed: 4.5
     bottleAmount: 10
-    levelDuration: 25
+    levelDuration: 20
   - markerSpeed: 4.5
     bottleAmount: 15
-    levelDuration: 25
+    levelDuration: 20
   shipGameDifficultySettings:
   - containers: 7
     trashRows: 3
     levelDuration: 1000
     trashPerRow: {x: 1, y: 3}
-  - containers: 7
+  - containers: 5
     trashRows: 5
     levelDuration: 1000
     trashPerRow: {x: 2, y: 3}
@@ -47,7 +47,7 @@ MonoBehaviour:
   - containers: 5
     trashRows: 7
     levelDuration: 1000
-    trashPerRow: {x: 3, y: 4}
+    trashPerRow: {x: 4, y: 4}
   - containers: 3
     trashRows: 7
     levelDuration: 1000
@@ -55,16 +55,16 @@ MonoBehaviour:
   trashGameDifficultySettings:
   - markerSpeed: 2
     bottleAmount: 3
-    levelDuration: 25
+    levelDuration: 20
   - markerSpeed: 3
     bottleAmount: 5
-    levelDuration: 25
+    levelDuration: 20
   - markerSpeed: 4
     bottleAmount: 7
-    levelDuration: 50
+    levelDuration: 20
   - markerSpeed: 4.5
     bottleAmount: 10
-    levelDuration: 50
+    levelDuration: 20
   - markerSpeed: 4.5
     bottleAmount: 15
-    levelDuration: 50
+    levelDuration: 20

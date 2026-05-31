@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,7 +9,9 @@ using static UnityEngine.Rendering.SplashScreen;
 public class GameManager : MonoBehaviour
 {
     [Header("Audio")]
-    [SerializeField] private AudioSource successSound;
+    [SerializeField] private AudioSource successSound_1;
+    [SerializeField] private AudioSource successSound_2;
+    [SerializeField] private AudioSource successSound_3;
     [SerializeField] private AudioSource failureSound;
     [SerializeField] private AudioSource transitionSound;
     [SerializeField] private AudioSource countdownSound;
@@ -61,7 +64,10 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = false;
 
+    //saving a timer so only one runs at a time
     private Coroutine timerCoroutine;
+
+    private int successSound;
 
     private void Start()
     {
@@ -192,22 +198,49 @@ public class GameManager : MonoBehaviour
                 break;
             case 1:
                 successIcon.SetActive(true);
-                successSound.Play();
                 pfandBottleCorrect.Stop();
                 pfandBottleCorrect.Play();
                 pfandArm.Stop();
                 pfandArm.Play();
                 remainingBottleAmount--;
 
+                //play random success sound
+                switch (successSound)
+                {
+                    case 0:
+                        successSound_1.Play();
+                        break;
+                    case 1:
+                        successSound_2.Play();
+                        break;
+                    case 2:
+                        successSound_3.Play();
+                        break;
+                }
+
                 break;
             case 2:
                 successIcon.SetActive(true);
-                successSound.Play();
                 pfandBottleCorrect.Stop();
                 pfandBottleCorrect.Play();
                 pfandArm.Stop();
                 pfandArm.Play();
                 remainingBottleAmount--;
+
+                //play random success sound
+                switch (successSound)
+                {
+                    case 0:
+                        successSound_1.Play();
+                        break;
+                    case 1:
+                        successSound_2.Play();
+                        break;
+                    case 2:
+                        successSound_3.Play();
+                        break;
+                }
+
                 break;
         }
 
@@ -224,11 +257,37 @@ public class GameManager : MonoBehaviour
 
         while (currentTimer > 0)
         {
-            if (currentTimer != 1)
-                countdownSound.Play();
-            else
-                bellSound.Play();
+            //play timer sound, but not in the ship game
+            switch (currentGameState)
+            {
+                case GameState.Pfand:
 
+                    if (currentTimer != 1)
+                        countdownSound.Play();
+                    else
+                        bellSound.Play();
+
+                    break;
+
+
+                case GameState.Ship:
+
+                    break;
+
+                case GameState.Trash:
+
+                    if (currentTimer != 1)
+                        countdownSound.Play();
+                    else
+                        bellSound.Play();
+
+                    break;
+            }
+
+            //set success sound number
+            successSound=Random.Range(0,3);
+
+            //timer counting
             timer.text = currentTimer.ToString();
 
             for (int i = 9; i >= 0; i--)
